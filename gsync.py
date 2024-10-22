@@ -1,4 +1,3 @@
-#!/home/mfact/.conda/envs/mfact/bin/python
 import os
 import json
 from colorama import Fore, Style, init
@@ -90,7 +89,10 @@ def compare_repos(known_repos, exist_repos):
 
     print(table)
 
-if __name__ == "__main__":
+def main():
     known_repos = get_repos()
     exist_repos = list_folders(".")
     compare_repos(known_repos, exist_repos)
+
+if __name__ == "__main__":
+    main()
