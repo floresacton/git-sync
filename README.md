@@ -1,4 +1,4 @@
-# git-sync-tool
+# git-sync
 Manage repos between devices
 
 Looks at working directory and compares it to user's repositories.
@@ -7,4 +7,7 @@ local folders and remote repositories
 
 ### Usage
 ```gsync```
+
+### Install
+```pip install git_sync_tool```
 
