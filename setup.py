@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='Git Sync Tool',
+    name='git_sync_tool',
     version='0.1.0',
     description='Easily sync repos across devices',
     long_description=open('README.md').read(),
@@ -16,6 +16,7 @@ setup(
         'tqdm',
         'gitpython',
     ],
+    python_requires='>=3.6',
     entry_points={
         'console_scripts': [
             'gsync=gsync:main',
