@@ -8,6 +8,8 @@ local folders and remote repositories
 ### Usage
 ```gsync```
 
+Specify version otherwise sometimes it grabs older ones
+
 ### Install
-```pip install git_sync_tool```
+```pip install git_sync_tool==0.1.7```
 

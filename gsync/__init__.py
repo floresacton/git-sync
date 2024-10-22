@@ -1,1 +1,0 @@
-from gsync import main

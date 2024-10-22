@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='git_sync_tool',
-    version='0.1.5',
+    version='0.1.7',
     description='Easily sync repos across devices',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
@@ -25,7 +25,7 @@ setup(
     python_requires='>=3.6',
     entry_points={
         'console_scripts': [
-            'gsync=gsync.gsync:main',
+            'gsync=git_sync.main:main',
         ],
     },
 )
