@@ -91,10 +91,13 @@ def compare_repos(known_repos, exist_repos, path="."):
 
     print(table)
 
-def status(path):
-    known_repos = get_repos()
+def status(path, missing):
     exist_repos = list_folders(path)
-    compare_repos(known_repos, exist_repos, path)
+    if missing:
+        known_repos = get_repos()
+        compare_repos(known_repos, exist_repos, path)
+    else:
+        compare_repos(exist_repos, exist_repos, path)
 
 def clone_repo(name):
     subprocess.run(
@@ -129,16 +132,21 @@ def main():
     list_parser = subparsers.add_parser('status', help="Show sync info")
     list_parser.add_argument(
         "-p", "--path",
-        default=os.getcwd(),
+        default=os.path.expanduser('~/Projects/'),
         help="Path to the directory containing local repositories (default: current directory)"
     )
+    list_parser.add_argument(
+        "-m", "--missing",
+        action="store_true",
+        help="Show only missing repositories"
+    ) 
 
     subparsers.add_parser('clone', help="Clone remote repos that don't exist locally")
 
     args = parser.parse_args()
 
     if args.command == "status":
-        status(args.path)
+        status(args.path, args.missing)
     elif args.command == "clone":
         clone()
 
