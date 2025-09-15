@@ -3,6 +3,10 @@ Manage repos between devices
 
 Looks at directory and compares it to user's repositories.
 
+### Building
+Commands to make source and build wheel
+```python setup.py sdist```
+```python setup.py bdist_wheel --universal```
 
 ### Usage
 ```gsync status [--path PATH] [--missing]```
@@ -15,5 +19,7 @@ Clone any repositories user repositories that don't exist locally
 
 ### Install
 ```pip install git_sync_tool==0.1.8```
+or
+```pip install .```
 
 Specify version otherwise sometimes it grabs older ones
